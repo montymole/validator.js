@@ -69,7 +69,7 @@
 
     var base64 = /^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=|[A-Za-z0-9+\/]{4})$/;
 
-    validator.extend = function (name, fn) {
+    validator.extending = function (name, fn) {
         validator[name] = function () {
             var args = Array.prototype.slice.call(arguments);
             args[0] = validator.toString(args[0]);
@@ -82,7 +82,7 @@
     validator.init = function () {
         for (var name in validator) {
             if (typeof validator[name] !== 'function' || name === 'toString' ||
-                    name === 'toDate' || name === 'extend' || name === 'init') {
+                    name === 'toDate' || name === 'extending' || name === 'init') {
                 continue;
             }
             validator.extend(name, validator[name]);
