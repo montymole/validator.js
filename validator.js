@@ -52,15 +52,15 @@
       , all: /^[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}$/i
     };
 
-    var alpha = /^[a-zA-Z]+$/
-      , alphanumeric = /^[a-zA-Z0-9]+$/
+    var alpha = /^[a-zA-ZäÄöÖåÅ]+$/
+      , alphanumeric = /^[a-zA-Z0-9äÄöÖåÅ ]+$/
       , numeric = /^-?[0-9]+$/
       , int = /^(?:-?(?:0|[1-9][0-9]*))$/
       , float = /^(?:-?(?:[0-9]+))?(?:\.[0-9]*)?(?:[eE][\+\-]?(?:[0-9]+))?$/
       , hexadecimal = /^[0-9a-fA-F]+$/
       , hexcolor = /^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/;
 
-    var ascii = /^[\x00-\x7F]+$/
+    var ascii = /^[\x00-\x7FäÄöÖåÅ]+$/
       , multibyte = /[^\x00-\x7F]/
       , fullWidth = /[^\u0020-\u007E\uFF61-\uFF9F\uFFA0-\uFFDC\uFFE8-\uFFEE0-9a-zA-Z]/
       , halfWidth = /[\u0020-\u007E\uFF61-\uFF9F\uFFA0-\uFFDC\uFFE8-\uFFEE0-9a-zA-Z]/;
