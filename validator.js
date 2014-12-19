@@ -85,7 +85,7 @@
                     name === 'toDate' || name === 'extending' || name === 'init') {
                 continue;
             }
-            validator.extend(name, validator[name]);
+            validator.extending(name, validator[name]);
         }
     };
 
